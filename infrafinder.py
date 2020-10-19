@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 import flatten_json
 from secrets import api_key, secret
 import censys.ipv4
