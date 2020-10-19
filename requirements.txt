@@ -1,0 +1,11 @@
+censys
+certifi
+chardet
+flatten-json
+idna
+netaddr
+requests
+six
+urllib3
+defang
+argparse
