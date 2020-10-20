@@ -11,6 +11,8 @@ Script imports a secrets.py file that must be located with the script specifying
 Outputs shared attributes amongst the given IPs in a user friendly search syntax that can be copied and pasted into censys search.
 
 Run using ```./infrafinder.py 8.8.8.8 8.8.8.4 8.8.8.8```
+optionally use the exclude flag to remove attributes from an IP that isn't related but has some of the attributes you are using in your signature:
+```./infrafinder.py 8.8.8.8 8.8.8.4 --exclude 8.8.8.9```
 
 or using the provider dockerfile:
 ```docker build . -t infrafinder && docker run infrafinder --rm 8.8.8.8 8.8.8[.]4```
