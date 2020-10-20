@@ -10,6 +10,7 @@ import argparse
 
 parser = argparse.ArgumentParser(prog="infrafinder.py", description='Find related attributes among ip addresses as censys queries. Set api key and secret in secrets.py')
 parser.add_argument('IP', help='IP address to compare', nargs='+')
+parser.add_argument('--exclude', '-e', help='exclude attributes from a false positive', nargs='+')
 args = parser.parse_args()
 
 #setting our credentials and getting ready to use censys API
@@ -43,5 +44,8 @@ if __name__ == "__main__":
     result = set(lookup_flat(args.IP[0]))
     for x in args.IP[1:]:
         result &= set(lookup_flat(x))
+    if args.exclude:
+        for x in args.exclude[0:]:
+            result -= set(lookup_flat(x))
     for value in sorted(result):
         print(f"{value} AND")
