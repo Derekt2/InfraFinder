@@ -1,0 +1,10 @@
+[project]
+name = "infrafinder"
+version = "0.1.0"
+description = "Compare IP addresses using Censys API to find related infrastructure"
+requires-python = ">=3.8"
+dependencies = [
+    "censys",
+    "defang",
+    "flatten-json",
+]
